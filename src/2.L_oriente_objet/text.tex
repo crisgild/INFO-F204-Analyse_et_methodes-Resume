@@ -106,7 +106,7 @@ Imaginons qu'on veuille réaliser une application pour faire des dessins. On a d
 
 On a une classe \textsc{Forme} qui va contenir tout ce qui est commun à une forme (taille, position, couleur). On a les classes \textsc{Rond}, \textsc{Carre} et \textsc{Triangle} qui héritent de \textsc{Forme}. On a une classe \textsc{Dessin} qui contient des \textsc{Forme}s et qui n’hérite de personne.
 
-On crée une méthode dessiner qui ne fait rien à la classe \textsc{Forme} (elle est juste la pour dire qu’elle existe). Et on la surcharge dans les classes \textsc{Triangle}, \textsc{Carre}, Rond. Comme ça on peut utiliser (\textsc{Forme} f).dessiner(), ce qui va appelé la méthode de la classe correspondante (soit de \textsc{Triangle}, soit de \textsc{Carre}, soit de \textsc{Rond}).
+On crée une méthode dessiner qui ne fait rien à la classe \textsc{Forme} (elle est juste la pour dire qu’elle existe). Et on la surcharge dans les classes \textsc{Triangle}, \textsc{Carre}, \textsc{Rond}. Comme ça on peut utiliser (\textsc{Forme} f).\textit{dessiner}(), ce qui va appelé la méthode de la classe correspondante (soit de \textsc{Triangle}, soit de \textsc{Carre}, soit de \textsc{Rond}).
 \\\textbf{Délégation}: Le fait qu’un objet en utilise un autre.
 
 

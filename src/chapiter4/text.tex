@@ -1,0 +1,61 @@
+\section{Aperçu d'UML}
+
+
+
+\subsection{Introduction}
+\textsc{\textbf{UML}} = \textsc{\textbf{U}nified \textbf{M}odelling \textbf{L}anguage}
+\\Il s’agit d’une boîte à outils, le processus est propre à celui qui l’utilise.
+\\C’est un langage de modélisation.
+\\\textbf{Modéliser}: Avant d’implémenter on va faire des plans de construction.
+\\Cela aide à réfléchir et à communiquer.
+
+
+
+\subsection{Bits de l'UML}
+Il a été fait pour être automatisable et lisible par un humain.
+\\Il est générique, il peut s’appliquer à tout type d’application.
+
+
+
+\subsection{Concepts}
+
+
+
+\subsubsection{Les vues}
+Il existe 5 vues dont chacune est définie par un certain nombre de diagrammes :
+\begin{description}
+	\item [Use case] montre les fonctionnalités du système tel qu’elles sont perçues par un acteur externe, qui peuvent être des utilisateurs ou d’autres systèmes (Diagrammes: Use case, Activity).
+    
+	\item [Logical view] définit les fonctionnalités du système, les informations manipulés, … (Diagrammes: Class Diagram, State, Sequence, Collaboration, Activity)
+
+	\item [Component view] indique comment le code est mis en boite. Les classes, les bibliothèques, fichiers de configurations, BDD, … (Diagrammes: Diagramme de composants)
+
+	\item [Deployment view] indique là où les composants vont s’exécuter.  Le déploiement du système dans l’architecture physique avec les ordinateurs et les appareils.
+
+	\item [Concurrency view] décrit comment les composants interagissent entre eux. Point de vue dynamique du système. (Diagramme de séquence)
+\end{description}
+
+
+
+\subsubsection{Les diagrammes}
+Il y a au total 9 diagrammes.
+\begin{description}
+	\item [Use case] Basique. Ce sont des dessins. On définit ce que les acteurs peuvent faire.
+    
+	\item [Class] On représente ici les classes à un haut niveau. On n’utilise que le nom des classes et les liens qui les unissent.
+    
+	\item [State] Représente les états d’un programme. On a un état initial (un rond noir) Puis des états reliés par des flèches.
+    
+	\item [Sequence] Représente des séquences de communication entre objets. Le temps se lit du haut vers le bas.
+    
+	\item [Collaboration] Correspond au sequence diagram, met on met en évidence la structure plutôt que le temps.
+    
+	\item [Object] Donne un exemple pour aider à la compréhension.
+    
+	\item [Activity] Représente le coté comportemental de l’application. On y montre des étapes.
+    
+	\item [Component] Identifie les composants et les relient.
+    
+	\item [Deployment] Constitué de gros cube. Un gros cube est une unité de traitement ou de stockage, un serveur ou une bdd.
+    
+\end{description}

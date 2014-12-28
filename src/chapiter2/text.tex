@@ -1,0 +1,120 @@
+\section{L’orienté objet}
+
+
+
+\subsection{Introduction}
+
+
+
+\subsection{Types de données abstraits}
+On sépare l’implémentation de la spécification, ce qui permet de développer plein de petits modules plutôt qu’un énorme bloc de code. On peut modifier des bouts de code à un endroit sans devoir modifier toute l’application du coup la maintenance est facile.
+\\\textbf{Code Client} : Code qui dépend d’un autre
+
+
+
+\subsection{Les objets}
+On écrivait le code qui traitait des données. Les objets réunissent les deux dans "une boîte".
+
+
+
+\subsubsection{Ce qu’est un objet}
+Un objet a une réalité et est unique (!= d’une classe). Il a un état et est modifiable.
+Objet = Identité + état + comportement
+Un objet reçoit des messages ( se déplacer, changer d’état, …) et va chercher le code correspondant. L’objet cache ses données, on ne peut passer que par les messages.
+
+
+
+\subsubsection{Interaction entre objets}
+Si plusieurs objets, il peuvent interagir (Exemple: En passant un objet en paramètre d’un message).
+\\Message $\neq$ Méthode $\Rightarrow$ On envoie un message à un objet, la méthode c’est le code que l’objet exécute lorsqu’il reçoit le message.
+\\\textbf{Method lookup}: Ce qui trouve la méthode correspondant au message.
+
+
+
+\subsubsection{Polymorphisme}
+Message $\neq$ d’un appel de fonction. Lors d’un message, on dit l’objet sur lequel ça va intervenir, le a fonction peut porter sur n’importe quoi.
+\\\textbf{Polymorphisme}: On envoie un même message à des objets de forme différente et la réponse pourra être différente.
+
+
+
+\subsubsection{Stockage des méthodes et classes}
+Classe à une réalité en mémoire, elle contient le code mais pas les données. 
+\\Un objet à aussi une réalité en mémoire, elle contient les données mais pas le code.
+\\Un objet est une instance d’une classe.
+\\Un objet connaît toujours sa classe, lorsqu’il reçoit un message il lui demande la méthode qui convient.
+
+
+
+\subsection{L'héritage}
+\begin{description}
+	\item [Héritage] On décrit un objet abstrait, puis des objets qui en hérite et qui récupère tout ça.
+	\item [Généraliser] Opération de créer un objet plus abstrait dont on va hériter.
+\end{description}
+
+
+
+\subsubsection{Principe de l’héritage}
+On dérive d’une classe parente et les sous-classes héritent de tous ses attributs et méthode.
+\\Les sous-classes peuvent surcharger les méthode pour les adapter à leurs besoins $\Rightarrow$ Overriding.
+\\\textbf{But}: Mettre de la structure qui amènera au polymorphisme et un code facilement maintenable.
+\\Pour savoir si B doit hériter de A, il faut pouvoir se dire : B est une sorte de A.
+
+
+
+\subsubsection{Types d’héritage}
+\begin{description}
+	\item [Héritage simple] Une classe hérite d’une seule et une seule classe. Cet héritage à une structure d’arbre, chaque classe a un parent et des enfants.
+	\item [Héritage multiple] Permet d’hériter directement de plusieurs classe. Les langages récents ne le permettent plus car plus de problème que de solution.
+\end{description}
+
+
+
+\subsubsection{Method lookup}
+Lorsqu’un objet reçoit un message, il connaît sa classe et de laquelle elle hérite. Il va chercher si la méthode est dans sa classe, sinon il regarde dans celle héritée et ainsi de suite.
+\\\textbf{Surcharge de méthodes}: Une classe peut redéfinir une méthode dont elle hérite.
+
+
+
+\subsubsection{self/this et super}
+Mots clés spécials :
+\begin{description}
+    \item [super] représente la classe parente.
+	\item [this] représente la classe qui a reçu le message qu’on traite.
+
+	\item [super] est statique, on sait immédiatement ce que c’est.
+	\item [shis] est dynamique, lors de la compilation on ne sait pas quel objet il représente. Car il peut représenter la classe elle même ou une classe fille.
+\end{description}
+
+
+
+\subsection{Polymorphisme}
+
+
+
+\subsubsection{Références}
+\textbf{Référence} (ou pointeur) : permet de nommer un objet et est différente de l’objet lui-même.
+\\Si on a une référence vers un objet de type A, on peut la faire pointer sur un objet de type B.
+\\L’objet de type B étant une sorte de A, on pourra utiliser les messages connus de A ( mais pas ceux de B).
+\\C’est grâce à ce principe qu’on va pouvoir utiliser le polymorphisme.
+
+
+
+\subsubsection{Exemple}
+Imaginons qu'on veuille réaliser une application pour faire des dessins. On a des boutons permettant de choisir un carré, un triangle ou un rond. On veut programmer ça, avec la pensée objet.
+
+On a une classe \textsc{Forme} qui va contenir tout ce qui est commun à une forme (taille, position, couleur). On a les classes \textsc{Rond}, \textsc{Carre} et \textsc{Triangle} qui héritent de \textsc{Forme}. On a une classe \textsc{Dessin} qui contient des \textsc{Forme}s et qui n’hérite de personne.
+
+On crée une méthode dessiner qui ne fait rien à la classe \textsc{Forme} (elle est juste la pour dire qu’elle existe). Et on la surcharge dans les classes \textsc{Triangle}, \textsc{Carre}, Rond. Comme ça on peut utiliser (\textsc{Forme} f).dessiner(), ce qui va appelé la méthode de la classe correspondante (soit de \textsc{Triangle}, soit de \textsc{Carre}, soit de \textsc{Rond}).
+\\\textbf{Délégation}: Le fait qu’un objet en utilise un autre.
+
+
+
+\subsubsection{Le C++}
+Le C++ laisse beaucoup de liberté, et il y a plein de piège dans son orienté objet.
+Les fonctions ne sont pas virtuelle par défaut ( si on surcharge une méthode de A dans B, et qu’on envoie le message à une référence A qui pointe vers un objet B c’est la méthode de A qui sera appelé.) Pour résoudre le problème, il faut rajouter \textbf{virtual} devant la méthode de A.
+
+\textbf{Modificateur de visibilité}: Lors de l’héritage on peut préciser si il est public privé ou protégé. Les autres types d’héritage que public masquent les attributs et méthodes de A. $\Rightarrow$ Cela rompt l’orienté objet.
+
+C++ permet de créer des objets sur la pile et pas seulement par référence. $\Rightarrow$ Empêche tout un tas de bonnes choses de l’orienté objet.
+
+\textbf{this} est implicite et il n'existe pas de mot clé \textbf{super}, on nomme explicitement la classe.

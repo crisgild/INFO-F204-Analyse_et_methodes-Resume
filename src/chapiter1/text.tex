@@ -1,0 +1,37 @@
+\section{Le software engineering}
+
+
+
+\subsection{Introduction}
+Dans les années 70 on s’est rendu compte qu’on avait besoin de méthode de développement. Mais plusieurs problèmes se posent : Le client peut vouloir changer quelque chose au cours du projet, on doit pouvoir estimer le temps que ça va prendre, etc…
+Deux plus grosses causes d’échec : Compréhension du client et le travail en équipe. Les diagrammes UML vont aider, et clarifier les choses avec le client et son équipe.
+Pourquoi ne peut on pas s’inspirer de l'ingénierie civile (ex:construction d’un pont) ? Car un pont on le voit, pas le logiciel et ce dernier évolue continuellement contrairement au pont.
+Problème: Évolution du logiciel dégradante $\Rightarrow$ Chaque modification devient de plus en plus compliquée.
+
+
+
+\subsection{Méthode Waterfall}
+On procède par phase :
+\begin{description}
+	\item [Requirements Collection] Rencontre avec le client et note de tous les besoins (Risques: Documentations incomplètes, inexactes et ambiguës)
+	\item [Analysis] Les analystes définissent les besoins, les écrans, … (Risques: Fournir une spécification qui ne correspond pas aux besoins du client.)
+	\item [Design] Architectes conçoivent l’architecture de l’application. Conception de diagrammes et choix des librairies.
+	\item [Implementation] Les codeurs développent leurs modules.
+	\item [Testing] Assemblage et livraison.
+\end{description}
+
+Cela a donné de bon résultats mais problèmes de communication car elle est faite par documents plutôt que par la parole. Les codeurs n’ont pas de recul et ne peuvent détecter des problèmes potentiels. Si il y a une erreur il faut corriger dans chacune des étapes. Un logiciel est long à développer et les besoins du client peuvent changer dur le développement.
+
+Avantages : Très contrôlé, panifiable, des documents décrivant l’entièreté de l’application.
+
+
+
+\subsection{Méthodes incrémentales et itératives}
+On procède par incréments. On livres des morceaux de logiciel au client petit à petit. C’est un enchaînement de mini waterfall. Cette méthode permet d’avoir plus de retour du client. On ne fait pas une grosse analyse, on développe juste complètement un module qu’on va montrer au client. Il vérifie et apporte ses corrections qui seront facilement faisables. On fait cela à chaque itération. Une itération dure en moyenne entre 2 et 4 semaines.
+
+Avantages : Le client s’implique et le projet à de grosses chances de réussites.
+
+
+
+\subsection{Bibliothèques}
+Avant lorsqu’on codait, on écrivait quasiment tout, mais maintenant on utilise beaucoup de frameworks et de composant. On doit trouver tout ces composants lors de l’analyse.

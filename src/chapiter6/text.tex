@@ -1,0 +1,300 @@
+\section{L'ingénierie des besoins}
+
+
+
+\subsection{Introduction}
+On doit capturer les besoins du client. On doit savoir comment l’informatique va résoudre ses problèmes. C’est souvent à cause de cette étape que des projets tombent à l’eau.
+
+
+
+\subsection{Les besoins}
+Les besoins décrive le système et ses contraintes.
+\\C’est ce que le programme doit faire mais pas comment il va le faire.
+
+
+
+\subsubsection{User et System Requirements}
+\begin{description}
+	\item [User requirements] Ce que l’utilisateur veut.
+	\item [System requirements] Un peu plus bas, plus formel.
+\end{description}
+Les users requirements doivent être dans le jargon du client.
+
+
+
+\subsubsection{Besoins fonctionnels ou non}
+\begin{description}
+	\item [Besoins fonctionnels] Les services que l’application doit rendre.
+	\item [Besoins non-fonctionnels] ergonomie, robustesse, sécurité, …
+	\item [Domain requirements] Vient du domaine dans lequel l’application sera utilisée. Ces besoins ne seront pas donné par le clients car ils sont évidents pour lui.
+\end{description}
+
+
+
+\subsection{Écrire les besoins}
+Il faut écrire les besoins pour que d’autres personnes puissent les lire. Ces documents vont devoir être simple et clair.
+\\Il faut numéroter les besoins avec des titres,sous-titres, … et éviter les gros pavés de texte.
+\\Il faut se définir un standard. Il faut aussi éviter le jargon informatique car le client va le lire aussi.
+
+
+
+\subsection{Les System requirements}
+Il faut être plus rigoureux que pour les user requirements. UML peut intervenir ici.
+On définit les terminologie, on remplace le jargon par des définitions, … On a aussi une table des matière.
+\\\textbf{Software requirements document}: Il s’agit du document qui regroupe les user requirements et les system requirements. Il existe des standards pour ce genre de document.
+
+
+
+\subsection{Croiser les besoins}
+Différentes personnes pensent différemment. Pour chaque besoins, il faut chercher les informations. On va souvent tomber sur des contradictions.
+Certaines personnes pourrait vouloir freiner le projet.
+\\Il ne faut pas non plus oublier d’aller voir les utilisateurs.
+
+
+
+\subsection{Aperçu d’un SRD}
+On commence par l’introduction. On y explique les buts à atteindre.
+\\Le SRD va évoluer au fur et à mesure du projets.
+\\Il faut donc un gestionnaire de version pour avoir un historique des versions et on peut récupérer les anciennes.
+
+
+
+\subsection{UML Use case}
+La vue des use case est centrale en UML car ce sont les besoins qui définissent le programme.
+On l’utilise pour exprimer des interactions, pas des contraintes donc elle est mieux pour les besoins fonctionnels.
+
+
+
+\subsubsection{Les acteurs}
+On représente ça par un bonhomme dans tous les cas. Il ne s’agit pas spécialement d’une personne. C’est les acteurs qui déclenche les use case.
+
+
+
+\subsubsection{Les use cases}
+Il s’agit d’un ensemble d’action que fait le système. Ils sont initiées par un acteur et lui fournissent une réponse.
+\\On ne dit pas ce qui se passe derrière, seulement les informations qui entrent et qui sortent.
+\\On peut décrire l’use case sous forme de texte structuré ou sous forme de diagrammes de séquence ou des diagrammes d’état.
+\\On peut décrire les exceptions, les erreurs, les scénarios alternatifs, …
+
+
+\subsubsection{Description de l’use case}
+Généralement sous forme de texte.
+\begin{itemize}
+	\item Acteurs ;
+	\item Pré-conditions ( ce qui est vrai avant que le use case se déclenche ) ;
+	\item Post-conditions ( ce qui est vrai après le use case ) ;
+	\item Cas basique ( décrit chaque étape de l’interaction entre le système et l’utilisateur ) ;
+	\item Alternative flow ;
+	\item Special requierement ( Besoins spéciaux du use case ) ;
+	\item Relation entre use cas.
+\end{itemize}
+
+
+
+\subsubsection{Relations}
+\begin{description}
+	\item [Généralisation entre les acteurs] Permettre à des acteurs d’hériter d’autre.
+	\item [Généralisation d’use-case] Permet de spécialiser un use case.
+	\item [Include] Permet d’inclure le contenu d’un use case dans un autre. ( on représente ca avec le stéréotype << include >>.
+	\item [Extensibilité] Revient à décrire un use case en laissant un vide.
+\end{description}
+
+
+
+6.8. Modélisation dynamique:
+Ce qu’on a vu avant = Modélisation statique => On définit les choses.
+Maintenant on s’intéresse au côté dynamique comme l’envoi de messages entre objets, leur vie, …
+On ne modélise pas tout mais seulement le nécessaire.
+UML offre 4 diagrammes: Sequence digrams, collaboration digrams, state diagrams, activity diagrams.
+6.8.1. Sequence diagrams:
+Les diagrammes de séquence et de collaboration montrent tous les deux de la collaboration mais celui de séquence se concentre sur le temps alors que celui de collaboration se concentre sur la structure de communication.
+Le séquence diagramme représente l'interaction entre plusieurs objets comme une séquence de message se lisant du haut vers le bas.
+On peut utiliser des branchements, des boucles, des conditions, …
+L’échange de message se fait de manière synchrone (flèche pleine), asynchrone (flèche pas pleine) et la réponse (flèche pointillée).
+On peut envoyé un message new peut être envoyé à un objet qu’on crée. Quand on a fini on le delete en plaçant une croix à la fin de sa ligne de vie.
+6.8.2. Collaboration diagrams:
+Parfois on a trop d’objet et le diagramme de séquence deviendrait trop complexe.
+On utilise donc le diagramme de collaboration où la notion de temps disparaît
+
+On peut numéroter les messages, pour savoir dans quel ordre ils sont envoyé.
+On peut mettre des conditions et des descriptions.
+
+La visibilité permet de savoir comment un objet sait qu’un autre existe.
+Association: Le réceptionniste est un attribut
+Global: Variable global
+Local: Variable local
+Parameter: Objet recu en paramètre.
+Self: Le pointeur this.
+7. Le test:
+7.1. Introduction:
+On va faire des test unitaire pour tester le programme. Ils testent une partie du programme de manière indépendante des autres.
+
+On prend une classe , on l’isole et on vérifie qu’elle fait bien ce qu’elle est censé faire.
+Il existe différentes approches de test:
+Test exploratoire: On joue avec l’application, on utilise l’interface, on a rien prévu pour le test.
+Utiliser des outils qui injecte des données à l’application.
+Test unitaire: On ne teste pas l’application mais les composants. On va créer un code supplémentaire pour tester.
+Stub ou Mock: Remplacer une classe par une autre, minimaliste et ne fournissant que l’interface ainsi éventuellement des outillages de test.
+7.2. Conditions:
+Invariant: Expression booléenne qui est toujours vraie. On commence donc par les vérifier. Si un des invariant est faux, c’est qu’il y a une erreur.
+Pré-condition et Post-conditions: Expression assurées être vraies avant ou après la méthode.
+7.3. Assertions:
+Assertion: Permet d’exprimer une expression booléenne qui doit être vraie à cet endroit.
+Cela permet de formaliser et d’écrire des pré-conditions, invariants et post-conditions.
+
+Avec une assertion, si l’invariant est violé on sait où et l’erreur ne se propage pas.
+7.4. Test unitaire:
+On écrit en général les test unitaires sous la forme d’objet. On les appelles des testssuites.
+Un avantage des tests unitaires est qu’on peut les relancer très facilement. On peut rejouer les test même sur ce qu’on a pas modifié. On vérifie qu’on a pas cassé quelque chose qui marchait déjà. C’est un test de non-régression.
+7.4.1. Rédaction de tests:
+Les développeurs doivent écrire du code et des tests en même temps mais parfois on écrit d’abord les tests puis le code.
+Extreme programming: Technique de programmation agile, très fortement itérative qui se base la dessus.
+Écrire d’abord les test permet de tester la spécification et non l’implémentation.
+Avant on écrivait beaucoup de documentation, qui finissait par ne plus être à jour. La meilleure source d’information sur une application est le code. Il faut investir du temps au niveau du code, de son auto-documentation, ses tests, sa lisibilité, …
+Les tests servent maintenant de documentation car ils sont toujours à jour.
+7.4.2. Méthodologie de rédaction de tests:
+Si on a un bug trouvé par le client, c’est qu’il est passé à travers les tests, donc aucun ne le couvre.
+On rédige alors un test qui échoue sur le bug et seulement ensuite on va pouvoir le corriger.
+Si en cherchant le bug on place des printf, c’est que ça devrait se retrouver dans le test.
+7.5. Mise en place de tests unitaires:
+On va tester une classe ou un petit morceau de programme.
+Il existe des frameworks de test unitaires dans presque tout les langages. ( CppUnit pour C++)
+En CppUnit, un testcase hérite de CppUnit::TestCase. La classe du test devrai avoir le nom “NomTest”.
+Un échec est une assertion qui rate, mais on l’avait anticipé. Une Erreur est un bug non-détecté par une assertion.
+7.5.1. Qualité des tests unitaires:
+Un bon test unitaire doit avoir certaines propriétés.
+Un test unitaire doit être déterministe: A chaque lancement du test, on doit avoir le même résultat. Sinon on peut perdre confiance dans les tests.
+Le lancement doit être automatisé.
+Les test sont une source de documentation. Ils doivent donc être lisible.
+Ils doivent être le moins sensible possible aux changements du code.
+Ils ne doivent pas tester des choses évidentes mais traiter les choses complexes et difficiles en premier.
+7.5.2. Frameworks de test:
+Les éléments clé d’un framework de tests sont le TestCase ( Cas de test ), les mécanisme pour les exécuter, les fixtures (un contexte, les objets cobaye dont on a besoin, les TestSuites ( un ensemble de TestCase) et le TestRunnerqui va déclencher les tests.
+
+On commence par déclarer un TestRunner. Un Outputter prend le flux de sortie et le met ailleurs.
+On enregistre les test auprès du TestRunner. Puis on le lance et l’Outputter contient maintenant les résultats.
+
+TestFixture: Une fixture est le contexte partagé par tout les testcase d’une suite de test.
+Entre chaque test, le contexte est réinitialisé à la fixture de départ.
+8. Étude de cas de développement : un oxo:
+8.1. Analyse:
+Requirements du client: Une description du jeu.
+
+La première chose à faire est d’identifier les acteurs et de faire des use case. Dans ce cas on a deux joueurs qui interagissent avec le programme. On a donc un seul acteur joueur, celui qui joue son tour.
+
+Ensuite on fait un diagramme de classes. On fait parler tout le monde sans critique, on amène de l’information sans la classer ni rien.
+8.2. Approche itérative:
+L’approche itérative propose des sous-versions du logiciel après chaque étape montrable au client. Cela permet d’avoir des retours plus vite. Mais cela peut mener à développer des choses qu’on va bazarder plus tard mais c’est normal.
+
+Refactoring: Changer le code pour que l’application fasse non pas des choses en plus mais différement.
+
+A chaque itération, on modifie ce qu’on a déjà fait et on arrive à la fin avec un système qui marche.
+8.3. Direction et début:
+Avant de commencer la première itération, on fixe le scope. ( Le jeu sera t’il en résaux ? Avec parties sauvegardées ? … ).
+
+On va proposer les objets. Classe Game qui gère les règles. La classe Player représente un joueur et s’occupe de l’input. Compartment est une case de la grille, gérée par Game. Figure est ce qu’on met dans les Compartments. On ajoute un objet Driver qui va gérer le jeu et l’affichage.
+
+Sequence Diagram montre une petite partie: Game crée des Player, Driver passe son temps à demander à game si il a fini. Game demande à un joueur chacun son tour quel mouvement il peut faire.
+8.4. Extention:
+Notre prochaine itération vise à avoir un Board, de pouvoir l’imprimer et de pouvoir ajouter des joueurs.
+
+Plateau de jeu : matrice 3x3, statique, de caractère. Chaque carac est soit un O, soit un X, soit un espace. Le board init à plein d’espace au début. On le référence avec des set et get.
+Dans ces méthodes on a une assertion inRange, qui vérifie que la colonne est entre A et C et la ligne entre 1 et 3.
+
+Pour le test, on fait plein de get et set et de vérifier qu’on récupère bien ce qu’on met dans la matrice. On teste également qu’au début, la matrice est vide. La dernière vérification teste que inRange(“D”,”3”) renvoie bien faux.
+9. Implementation and Design Issues:
+9.1. Aspect du code:
+On va voir quelques standards à appliquer quand on code.
+Le premier principe de lisibilité est la cohérence. Il faut éviter qu’on sache reconnaître quel développeur a écrit quel code.
+
+Couplage: Interdépendante entre le code du projet. Quand un élément change, il faut modifier tout ce qui y est couplé. Quand le couplage au sein de l’application est trop important, la maintenance est difficile.
+
+Cohésion: est le couplage interne. Ce qu’on a mis dans un objet a une bonne raison d’y être.
+Quand on a un faible couplage, on a une très forte cohésion. => Ca c’est bien.
+
+Standard de codage: Ensemble de règles qui définissent comment on écrit du code.
+Il faut toujours suivre le standard de codage du projet sur lequel on travaille.
+9.1.2. Noms:
+C’est le seul endroit ou on peut donner une signification humaine au code.
+Prendre le temps de bien choisir un nom fait gagner énormément de temps.
+
+Le nom d’une méthode doit expliquer ce qu’elle fait. Un objet peut changer son état , changer l’état d’un de ses arguments, ou alors ne rien faire et retourner un résultat. Chacun de ces types de méthode utilise des noms prédéfinis.
+Quand on change l’objet, on utilise un verbe(insert, clear, …).
+Quand on modifie un paramètre on peut utiliser des noms constitués d’un verbe et d’une préposition or ou to. (displayOn, printTo,...) 
+Quand on ne fait que retourner une valeur, on utilise un nom(left,size,color,...)
+
+Les méthodes d’accès ont généralement des noms venant par paire : getWinner et setWinner.
+Les méthodes de test vérifient quelque chose sur l’objet. On a des nom en is.. et has.. (isEmpty, …)
+Les méthode de conversion sont généralement en as..(asString, …)
+
+Pour les classes, les noms commence par une majuscule et sont proches de ce que l’homme comprend ( ex: Voitre, Roue, … )
+Quand une classe est abstraite on place Abstarct quelque-part dans le nom.
+Lorsqu’on utilise un design pattern, on utilise son nom dans le nom de la classe.
+9.1.3. Formattage:
+Tout le monde doit utiliser une même configuration d’indentation.
+SI quelqu’un fait un commit après que son éditeur ait réindenter le fichier, tout le fichier sera réécrit au lieu des seules modifications apportées.
+9.2. Encapsulation:
+Le principe de Parnas: Le développeur d’un composant ne doit fournir à l’extérieur que le strict minimum nécessaire pour que l’objet soit utilisable. Ni plus , ni moins.
+
+Quand un bout de code en appelle un autre en connaissant tout son intimité, c’est un couplage fort. On est sans doute très dépendant de plein de petits comportements de l’objet appelé.
+Si on appelle la méthode d’un objet de manière polymorphique, on ne connaît rien de l’objet appelé. Ce couplage est bien plus faible.
+
+La loi de Demeter: Si un bout de code qui en utilise un autre sait que cet autre en utilise un troisième, alors le premier et le troisième sont liés. On évite ça en s’assurant que l’interface publique d’un objet n’expose rien d’interne.!
+La loi de demeter dit qu’on ne peut envoyer un message qu’à soit même, un objet qu’on crée, ses attributs, les arguments qu’on reçoit ou super. Cette règle est très tricte, on ne peut pas passer “à travers” un objet.
+9.3. Commentaires:
+Avant on apprenait à mettre beaucoup de commentaire. Maintenant on dit que moins il y a de commentaire mieux c’est. MAIS il faut commenter.
+
+Le code auto-documenté est basé sur le fait que si on est tenté de mettre un commentaire dans son code pour expliquer ce qu’il fait c’est que le code est peut être trop compliqué.
+
+Un puriste préfère un code lisible sans commentaires qu’un code aussi lisible mais avec commentaires.
+9.4. Gestion des booléens et valeurs de retour:
+Parfois passer des paramètres un peu interne peut entrainer un couplage trop important. (setStatus(ON|OFF)). Il faut alors faire deux méthodes , makeOn et makeOff.
+
+Si parfois on est tenté d’avoir des méthodes qui retournent plusieurs choses, il faut alors découper la méthode pour en avoir deux ou plus.
+
+Une autre solution est de renvoyer un objet avec de beaux getters. Ex: Au lieu de renvoyer un font et un color, on crée un objet Style qui contient ça.
+9.5. Duplication de code:
+Quand on modifie un bout de code, il faut ensuite aller regarder partout où il a été copié et corriger partout. Si on copie/colle quelque chose, c’est que quelque chose cloche.
+9.6. Magic numbers:
+Parfois on a des nombres qui se promène dans le code ( ex: des 0.21 pour le TVA).
+Il faut remplacer ces nombres magiques par des constantes nominées ou des méthodes qui retournent des choses.
+9.7. Code gardé:
+Un code gardé n’est exécuté que dans certain cas. C’est une grosse fonction placée dans un gros if.
+
+Pour le résoudre on inverse la condition du if et on met un return.
+Cela permet de gagner de l’indentation et c’est plus clair.
+10. Distribution et synchronisation en UML:
+10.1. Diagramme d’état:
+Un diagramme d’état représente des états, reliés par des transitions.
+Sur chaque transition, il y a un label “Déclencheur / Action”
+(ex: “Activation du backup / Activation de l’utilitaire graphique”).
+Un état peut avoir une activité. Quand le système rentre dans cet état, il exécute l’activité et n’en sort que quand elle est finie. ( do/activité dans la description de l’état).
+10.2. Diagrammes de composants et de déploiement:
+Représente la structure physique de l’application.
+
+Le composants sont nommés et on un type ( source, objets, exécutable, …).
+Le diagramme de déploiement est le mapping entre les composants et les noeuds d’exécution de l’application.
+Un noeud de stockage ou d’exécution est représenté par un gros cube, contenant des composants.
+10.3. Diagramme d’activité:
+Comme un diagramme d’état mais plus adapté à des choses avec des conditions et plus d’activités.
+
+On a un état de début , un état de fin, des activités, puis des branch (if, avec une condition sur chaque sortie. Une seule est prise.), des join ( des entrées, et on revient sur le même chemin).
+
+Un fork lance toutes les actions filles en parallèle. Le join permet de synchro des choses.
+
+Une sous-activité permet d’avoir un diagramme simple avec des activité haut niveau. Si on l’ouvre, on tombe sur un autre diagramme.
+
+Une swimlane permette de séparer deux choses indépendant. ( comme ce qui se passe sur un client et un serveur.)
+10.4. Processus et threads:
+Un objet actif représente un thread ou un processus.
+Pour représenter un objet actif en UML, on lui fait un gros bord.
+Un stéréotype ( = Permet de classifier des éléments UML.) peut être apposé sur quelque-chose qui représente un thread ou un processus.
+
+Deux objets actifs peuvent communiquer de manière synchrone (bloquant) ou asynchrone.
+
+Si plusieurs actifs appelle un passif, on peut avoir des problèmes. Pour régler ça, on utilise des stéréotypes.
+sequential: Les appelants doivent sérialiser leurs appels.
+guarded: Même chose. Sauf que c’est l’objet qui s’assure de ne traiter les choses qu’en série.
+concurrent: Il peut accepter tout en même temps et il sait s’arranger pour que ca marche correctement.
+
+Un contrainte avec un égal ( {location=airport} ) est une tagged value.

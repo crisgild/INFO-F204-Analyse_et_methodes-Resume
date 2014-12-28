@@ -1,0 +1,87 @@
+\section{Meta Model UML}
+
+
+
+\subsection{Introduction}
+Tout les composants qu’on peut utiliser en UML ont été écrits en UML.
+\\Un méta-model est un modèle qui en décrit un autre.
+\\Chaque diagramme est une instance du méta-model.
+
+
+
+\subsection{L'élément}
+Tout ce qu’on manipule en UML est un élément.
+\\Chaque élément peut être contenu dans un paquet.
+
+
+
+\subsection{Mécanismes}
+\begin{itemize}
+	\item [Stéréotype] permet d’étendre UML. ( format : << stéréotype >>). On veut par exemple montrer que certaines classe servent à la gestions des freins, on leur ajoute le stéréotype <<gestion des freins>>.
+
+	\item [Tagged values] est une association entre un nom et une valeur. (Exemple: créateur: machin)
+    
+	\item [Notes] donne des bouts de texte, des commentaires.
+
+	\item [Contraintes] entouré par des accolades. Permet de représenter des contraintes sur les attributs, valeurs, associations, …
+
+	\item [Dépendances] dit qu’un élément dépend d’un autre (flèche en pointillé)
+
+	\item [Types prédéfinis] sont les types qu’on connaît (bool, string, int, …)
+
+	\item [Multiplicité] représente un nombre lors des associations.
+
+	\item [Package] rassemble des éléments.
+
+\end{itemize}
+
+
+
+\subsection{Diagrammes des classes}
+On y représente les classes utilisées dans le projet. Représente les différentes informations que l’application va devoir manipuler.
+
+
+
+\subsubsection{Représentation d’une classe}
+Représenté par un grand rectangle contenant en haut le nom de la classe, puis les attributs, puis les méthodes.
+
+
+
+\subsubsection{Règles de représentation}
+Classe commence par une majuscule.
+\\Méthode doit être un nom, non une action ou un verbe.
+\\Attribut commence par une minuscule et ont un type ou une visibilité et peut avoir une valeur par défaut.
+\\Méthodes ont une signature ( type de retour, le nom, 0 ou plusieurs paramètres) et une visibilité.
+
+
+
+\subsubsection{Relations de base}
+4 types de relations/associations entre les classes.
+\begin{description}
+	\item [Usage] Utilisation
+	\item [Inheritance] L’héritage
+	\item [Refinement] La même classe avec plus de détails.
+	\item [Réalisation] Les classes abstraites qu’on réalise.
+\end{description}
+
+Pour la relation d’usage on peut ( pas obligatoire) avoir une direction et une multiplicité.
+
+\textbf{Relations ternaires}: Relations entre trois classes.
+\textbf{Role name}: Le nom du rôle joué par la classe dans la relation (Exemple: maître ou esclave.)
+
+
+
+\subsubsection{Relations étendues}
+\begin{itemize}
+	\item [Association] Une association représente une relation quelconque entre deux classes ; en général, les objets d’une classe se servant de ceux d’une autre classe. (Exemple : une personne utilise un ordinateur.) Un simple trait entre les deux classes, peut être composé d’une flèche pour indiquer une direction.
+
+	\item [Agrégation]: Une agrégation permet de définir une entité comme étant liée à plusieurs entités de classe différente ; décrit une association de type « fait partie de », « a ». (Exemple: Une flotte constituée de plusieurs bateau. Une flotte n’est plus une flotte sans bateau.) Représenté par un diamant vide du coté de la classe qui agrège (ici la flotte). 
+
+	\item [Composition]: Comme l’agrégation mais en plus fort. Elle fait partie entière de l’objet. Si on détruit le tout, on détruit tous les éléments. (Exemple: Si on détruit le livre, les pages n’ont plus de raison d’être, contrairement aux bateaux sans la flotte.) Représenté par un diamant noir du coté de la classe principale (ici le livre).
+
+	\item [Généralisation]: Héritage, flèche pointant sur la classe parente.
+
+	\item [Raffinement]: Relation d’une classe vers elle même. On représente ça avec << refine>>
+
+	\item [Réalisation]: Dit qu’une classe en réalise une autre.
+\end{itemize}

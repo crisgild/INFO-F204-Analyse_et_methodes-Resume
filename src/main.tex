@@ -42,62 +42,7 @@
 
 \pdfinfo{
     /Author   (Rodrigue VAN BRANDE)
-    /Creator  (https://github.com/Rodriguevb/Resumes-et-formulaires-de-Universite-Libre-de-Bruxelles/)
-}
-
-%Création d'un subsub...section (avec \paragraph{} \subparagraph{})
-\setcounter{secnumdepth}{5}
-\setcounter{tocdepth}{5}
-
-
-%\newcommand{\fonction}[nb de parametre]{définition de la commande}
-\newcommand{\guillemets}[1]{\og #1 \fg} % citation entre guillemets
-\newcommand{\gras}[1]{\textbf{#1}} %met en gras
-\newcommand{\italique}[1]{\textit{#1}} %met en italique%------------------------------------------------------------------
-% Main commun à tous les tex généraux
-%------------------------------------------------------------------
-
-\documentclass[a4paper,10pt]{article}
-\usepackage[a4paper]{geometry}
-\geometry{hscale=0.8,vscale=0.8,centering}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage[french]{babel} % Exposant
-
-
-\usepackage{enumerate} % Listes
-\usepackage{amsmath} % Matrices
-\usepackage{graphicx}
-\usepackage{amssymb}
-\usepackage{ulem}
-\usepackage{color}
-
-\usepackage{listings} % Lecture du code
-\usepackage{hyperref} % Hyperlien
-
-
-% Mise en page spéciale fancyhdr pour les en-têtes
-\usepackage{fancyhdr}
-\pagestyle{fancy}
-
-\renewcommand{\headrulewidth}{0pt}
-\fancyhead[C]{} % Rien en haut de page au milieu
-\fancyhead[L]{\leftmark} % Nom du chapitre actuel en haut de page à gauche
-\fancyhead[R]{\thepage} % Numéro de page en haut de page à droite
-
-\renewcommand{\footrulewidth}{0pt}
-\fancyfoot[C]{} % Rien en bas de page au milieu
-\fancyfoot[L]{Open source pour ajout ou modification: https://github.com/Rodriguevb/Resumes-et-formulaires-de-Universite-Libre-de-Bruxelles/} % Numéro de page en bas de page à gauche
-\fancyfoot[R]{\thepage} % Numéro de page en bas de page à droite
-\setlength{\headheight}{12.1638pt}
-
-
-\author{Rodrigue \textsc{Van Brande}} % Auteur
-\date{\today} % Date de compilation du pdf
-
-\pdfinfo{
-    /Author   (Rodrigue VAN BRANDE & Nicolas HEREMAN)
-    /Creator  (https://github.com/Rodriguevb/Resumes-et-formulaires-de-Universite-Libre-de-Bruxelles/)
+    /Creator  (https://github.com/Rodriguevb/INFOF204-Analyse-et-methodes-Resume/)
 }
 
 %Création d'un subsub...section (avec \paragraph{} \subparagraph{})
@@ -126,10 +71,11 @@
     \tableofcontents % table des matières / Besoin d'une double compilation
     \newpage         % Saut de page
 
-    \input{chapiter1/text}
-    \input{chapiter2/text}
-    \input{chapiter3/text}
-    \input{chapiter4/text}
-    \input{chapiter5/text}
+    \input{1.Le_software_engineering/text}
+    \input{2.L_oriente_objet/text}
+    \input{3.Heritage_avance/text}
+    \input{4.Apercu_d_UML/text}
+    \input{5.Meta_Model_UML/text}
+    \input{6.L_ingenierie_des_besoins/text}
     
 \end{document}

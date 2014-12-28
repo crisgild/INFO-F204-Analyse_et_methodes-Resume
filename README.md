@@ -7,5 +7,7 @@ Ce répertoire contient les résumés en PDF (via LaTeX) du cours INFOF204 - Ana
 LaTeX est un langage code conçu pour automatiser la mise en page d'un contenu. (http://fr.wikipedia.org/wiki/LaTeX)
 
 ### Aide à LaTeX
-* [Tutoriel complet](http://www.ukonline.be/programmation/latex/tutoriel/index.php)
-* [List Structures](http://en.wikibooks.org/wiki/LaTeX/List_Structures)
+* [Wikibooks LaTeX sommaire](http://fr.wikibooks.org/wiki/LaTeX)
+* [Wikibooks: Installer LaTeX](http://fr.wikibooks.org/wiki/LaTeX/Installer_LaTeX)
+* [Wikibooks: Éditeur de texte pour LaTeX](http://fr.wikibooks.org/wiki/LaTeX/Installer_LaTeX#Choisir_un_.C3.A9diteur_de_texte)
+* [Autre tutoriel complet](http://www.ukonline.be/programmation/latex/tutoriel/index.php)

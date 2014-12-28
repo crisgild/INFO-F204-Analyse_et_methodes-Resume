@@ -63,16 +63,18 @@ On dérive d’une classe parente et les sous-classes héritent de tous ses attr
 
 \subsubsection{Types d’héritage}
 \begin{description}
-	\item [Héritage simple] Une classe hérite d’une seule et une seule classe. Cet héritage à une structure d’arbre, chaque classe a un parent et des enfants.
-	\item [Héritage multiple] Permet d’hériter directement de plusieurs classe. Les langages récents ne le permettent plus car plus de problème que de solution.
+	\item [Héritage simple]: Une classe hérite d’une seule et une seule classe. Cet héritage à une structure d’arbre, chaque classe a un parent et des enfants.
+	\item [Héritage multiple]: Permet d’hériter directement de plusieurs classe. Les langages récents ne le permettent plus car plus de problème que de solution.
 \end{description}
 
 
 
 \subsubsection{Method lookup}
 Lorsqu’un objet reçoit un message, il connaît sa classe et de laquelle elle hérite. Il va chercher si la méthode est dans sa classe, sinon il regarde dans celle héritée et ainsi de suite.
-\\\textbf{Surcharge de méthodes}: Une classe peut redéfinir une méthode dont elle hérite.
-
+\begin{description}
+    \item [Redéfinition de méthode (\textit{Overriding})]: Les sous-classes peuvent surcharger les méthodes pour les adapter à leurs besoins ).
+    \item [Surcharge de méthodes (\textit{Overloading})]: est une possibilité offerte par certains langages de programmation qui permet de choisir entre différentes implémentations d'une même fonction ou méthode selon le nombre et le type des arguments fournis. La \textbf{surcharge de méthodes} ne doit pas être confondu avec la redéfinition de méthode (\textit{Overriding} en anglais). \textbf{Exemple:} \textit{classe.setPosition( int x, int y)} et \textit{classe.setPosition( Vector<int> vector )}. 
+\end{description}
 
 
 \subsubsection{self/this et super}
@@ -82,7 +84,7 @@ Mots clés spécials :
 	\item [this] représente la classe qui a reçu le message qu’on traite.
 
 	\item [super] est statique, on sait immédiatement ce que c’est.
-	\item [shis] est dynamique, lors de la compilation on ne sait pas quel objet il représente. Car il peut représenter la classe elle même ou une classe fille.
+	\item [this] est dynamique, lors de la compilation on ne sait pas quel objet il représente. Car il peut représenter la classe elle même ou une classe fille.
 \end{description}
 
 

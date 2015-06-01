@@ -1,0 +1,46 @@
+\section{Test}
+
+
+
+\subsection{Question 3 points}
+
+
+
+\subsubsection{Expliquez les termes suivants et leur utilité dans le contexte de la réalisation de tests unitaires}
+
+\begin{itemize}
+    \item \textbf{Pré-condition}
+\end{itemize}
+\textcolor[rgb]{0,0.48,0.58}{Condition booléenne qui doit être vraie avant l'appel d'une méthode.}
+
+\begin{itemize}
+	\item \textbf{Post-condition}
+\end{itemize}
+\textcolor[rgb]{0,0.48,0.58}{Condition booléenne qui doit être vraie après l'appel d'une méthode.}
+
+\begin{itemize}
+	\item \textbf{Invariant}
+\end{itemize}
+\color[rgb]{0,0.48,0.58}
+Condition booléenne qui doit être vraie avant et après le traitement. Il peut temporairement être faux durant le traitement. Si un des invariant est faux, c'est qu'il y a une erreur.
+\\Le test unitaire est un test où on ne teste pas l'application mais ses composants. On va créer un code supplémentaire pour réaliser cela.
+\\Contrairement au test unitaire, le test exploratoire est le fait de jouer avec l'application. On utilise l'interface mais on a rien prévu pour tout tester.
+\color[rgb]{0,0,0}
+
+
+
+\subsection{Question 3 points}
+
+
+
+\subsubsection{Expliquez en quoi consiste le test unitaire. Donnez 3 qualités que doit avoir un test unitaire. Expliquez, pour chacune de ces qualités, la raison pour la quelle cette qualité est importante.}
+On va tester une classe ou un petit morceau de programme.
+Il existe des frameworks de test unitaires dans presque tout les langages. ( CppUnit pour C++) En CppUnit, un testcase hérite de CppUnit::TestCase. La classe du test devrai avoir le nom “NomTest”. Un échec est une assertion qui rate, mais on l’avait anticipé. Une Erreur est un bug non-détecté par une assertion.
+\\Un bon test unitaire doit avoir certaines propriétés.
+\begin{itemize}
+	\item Un test unitaire doit être déterministe: A chaque lancement du test, on doit avoir le même résultat. Sinon on peut perdre confiance dans les tests.
+	\item Le lancement doit être automatisé, on peut les relancer très facilement.
+	\item Les test sont une source de documentation. Ils doivent donc être lisible.
+	\item Ils doivent être le moins sensible possible aux changements du code.
+	\item Ils ne doivent pas tester des choses évidentes mais traiter les choses complexes et difficiles en premier.
+\end{itemize}

@@ -1,0 +1,113 @@
+\section{UML}
+
+
+
+\subsection{Question - 2 points}
+
+
+
+\subsubsection{Énumérez et expliquez le rôle des différentes vues (View) en UML. Pour chacune de ces vues donnez un exemple typique de diagramme UML utilisé.}
+\begin{description}
+\color[rgb]{0,0.48,0.58}
+	\item [Use case]: Montre les fonctionnalités du système tel qu'elles sont perçues par un acteur externe, qui peuvent être des utilisateurs ou d'autres systèmes (Diagrammes: Use case, Activity).
+
+	\item [Logical view]: On y définit les fonctionnalités du système, les informations manipulés, … (Diagrammes: Class Diagram, State, Sequence, Collaboration, Activity)
+
+	\item [Component view]: Comment le code est mis en boite. Les classes, les bibliothèques, fichiers de configurations, BDD, … (Diagrammes: Diagramme de composants)
+
+	\item [Deployment view]: Indique là où les composants vont s'exécuter.  Le déploiement du système dans l'architecture physique avec les ordinateurs et les appareils.
+
+	\item [Concurrency view]: Décrit comment les composants interagissent entre eux. Point de vue dynamique du système. (Diagramme de séquence)
+\end{description}
+
+
+
+\subsection{Question – 2 points}
+
+
+
+\subsubsection{Expliquez la différence entre une Association, une Agrégation et une composition dans les diagrammes de classes. Donnez, pour chacune de ces relations, un exemple en justifiant clairement pourquoi cet exemple est une utilisation adéquate de cette relation.}
+\begin{description}
+\color[rgb]{0,0.48,0.58}
+	\item [Association]: Une association représente une relation quelconque entre deux classes ; en général, les objets d'une classe se servant de ceux d'une autre classe. (Exemple : une personne utilise un ordinateur.) Un simple trait entre les deux classes, peut être composé d'une flèche pour indiquer une direction.
+
+	\item [Agrégation]: Une agrégation permet de définir une entité comme étant liée à plusieurs entités de classe différente ; décrit une association de type « fait partie de », « a ». (Exemple: Une flotte constituée de plusieurs bateau. Une flotte n'est plus une flotte sans bateau.) Représenté par un diamant vide du coté de la classe qui agrège (ici la flotte).
+
+	\item [Composition]: Comme l'agrégation mais en plus fort. Elle fait partie entière de l'objet. Si on détruit le tout, on détruit tous les éléments. (Exemple: Si on détruit le livre, les pages n'ont plus de raison d'être, contrairement aux bateaux sans la flotte.) Représenté par un diamant noir du coté de la classe principale (ici le livre).
+
+\end{description}
+
+
+
+
+\subsection{Question – 3 points}
+
+
+
+\subsubsection{Quel diagramme UML permet de communiquer les mêmes informations que le diagramme de collaboration (collaboration diagram) ?}
+\textcolor[rgb]{0,0.48,0.58}{Le diagramme de séquence.}
+
+
+
+\subsubsection{Présentez ce diagramme et expliquez la différence entre celui-ci et le diagramme de collaboration.}
+\textcolor[rgb]{0,0.48,0.58}{Le diagramme de séquence met l'accent sur le classement des messages par ordre chronologique. Ce diagramme met l'accent sur le temps alors que le diagramme de collaboration se soucie plutôt de l'espace.}
+
+
+
+\subsection{Question – 3 points}
+
+
+
+\subsubsection{Nommez et expliquez les trois relations pouvant relier des uses cases (Cas d'utilisation). Donnez un exemple illustrant ces 3 relations.}
+\textcolor[rgb]{0,0.48,0.58}{???}
+
+
+
+\subsection{Question – 2 points}
+
+
+
+\subsubsection{Décrivez la différence entre modélisation \textsl{statique} et \textsl{dynamique}}
+\textcolor[rgb]{0,0.48,0.58}{La modélisation statique montre plus la structure du système
+ avec le découpage du code ou le lien entre classes, ... tandis que la modélisation dynamique montre plutôt l’évolution du système avec l'envoi des messages entre objets, leur durée de vie, changements d’état, ... On modélise uniquement le nécessaire.
+\\UML offre 4 diagrammes dynamique: Sequence diagrams, Collaboration diagram, State diagrams et Activity diagrams}
+
+
+
+\subsection{Question – 5 points}
+\subsubsection{Le programme suivant résout le problème des tours de Hanoï avec un nombre de disques égal à 2. Décrivez comment se déroule son exécution à l'aide d'un diagramme de séquence puis de collaboration (en vous concentrant uniquement sur les classes \textsc{Hanoi} et \textsc{Tour})}
+\lstinputlisting[language=C++]{questions-reponses/3.uml/tourDeHanoi.hpp}
+\begin{center}
+    \color[rgb]{0,0.48,0.58}
+    \includegraphics[width=0.30\textwidth]{questions-reponses/3.uml/tourDeHanoiSequence.pdf}
+    \includegraphics[width=0.30\textwidth]{questions-reponses/3.uml/tourDeHanoiCollaboration.pdf}
+\end{center}
+
+
+
+\subsection{Question – 12 points}
+
+
+
+\subsubsection[Fournir un diagramme de classes complet sur un aéroport]{Un aéroport est un ensemble de bâtiments : Terminaux, Hangars, Tour de contrôle, ... Plusieurs compagnies aériennes sont basées dans un aéroport, chacune d'entre elles ayant son ou ses hangars, son ou ses comptoirs dans le bâtiments principal, ... Une compagnie possède donc du personnel au sol pour réaliser différentes tâches (secrétariat, accueil, réparations, cuisine, ...) ainsi que du personnel volant (pilotes, steward, hôtesse). Une compagnie aérienne possède une flotte d'avions se caractérisant, entre autre, chacun par un ID, un nombre de place disponible, nombre de moteurs, type de moteurs, ...
+\\Un client peut acheter une place à bord d'un vol, il aura alors le choix de choisir la classe dans laquelle il veut voyager (1ère, 2ème ou 3ème), un type de siège (siège-lit, ultra-confort en 1ère, confort ou standard en 2ème, tabouret ou siège plastique en 3ème), s'il désire ou non un repas et si il veut un siège coté fenêtre, coté allée centrale ou si cela lui est égal.
+\\Un vol représente donc énormément de données : personnel volant, passagers, destination, départ, heure de départ, temps de vol, terminal de départ, ...
+\\Les compagnies aériennes tiendront donc pour chaque jour, un liste des vols qu'elles proposent. Et pour chaque vol, la liste des passagers (avec référence à leur réservation).
+\\On vous demande de nous fournir un diagramme de classes qui reprendra un maximum de détails décrits dans ce texte ainsi que d'autres informations qui vous semblent pertinentes. Soyez attentif à montrer que votre design suit le plus possible les principes de l'orienté objet. Toute hypothèse sur ce texte devra être décrite dans votre réponse. Pensez à justifier vos éventuels choix. De plus, on vous demande dans un deuxième temps, de détailler au mieux l'objet avion d'un point de vue OO ainsi que de mentionner toutes les relations que cet avion peut avoir avec d'autres objets.}
+\begin{center}
+    \color[rgb]{0,0.48,0.58}
+    \includegraphics[width=0.30\textwidth]{questions-reponses/3.uml/aeroportDiagrammeDeClasse.pdf}
+\end{center}
+
+
+
+\subsection{Question – 8 points}
+
+
+
+\subsubsection[Fournir un diagramme de collaboration et de séquence complets sur un aéroport]{Modéliser à l'aide des diagrammes de collaborations et de séquences (avec les notations UML exactes) la phase de décollage pour un avion. Pour décoller l'avion doit attendre son tour (dépendant de son heure de départ) et avoir l'autorisation de la tour de contrôle pour décoller (celle-ci vérifie que la piste est libre, que le chemin mentant à la piste est libre, ...) L'avion va ensuite après une série de contrôle (moteur, ...) se mettre en mouvement afin de se placer sur la piste pour décoller, mettre les gaz, placer correctement les ailes, prendre de la vitesse et enfin décoller. Veuillez à choisir des noms de méthodes explicites et adaptés.}
+\begin{center}
+    \color[rgb]{0,0.48,0.58}
+    \includegraphics[width=0.30\textwidth]{questions-reponses/3.uml/aeroportDiagrammeDeSequence.pdf}
+    \includegraphics[width=0.30\textwidth]{questions-reponses/3.uml/aeroportDiagrammeDeCollaboration.pdf}
+\end{center}

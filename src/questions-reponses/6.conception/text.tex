@@ -1,0 +1,30 @@
+\section{Conception}
+
+
+
+\subsection{Question - 2 points}
+
+
+
+\subsubsection{Expliquez les notions de \textit{cohésion} et de \textit{couplage} dans la conception de l’architecture d’une application. Que faut-il atteindre, une cohésion forte ou un couplage faible ? Expliquez.}
+\color[rgb]{0,0.48,0.58}
+Il vaut mieux atteindre une cohésion forte et un couplage faible. Car il est plus facile de modifier une méthode précise que devoir changer tout le code complet à cause d'un modification simple du projet.
+\\\textbf{Cohésion}: Le code fait quelque chose de spécifique et très précis qui demande pas de modification si jamais on venait à changer le projet dans l'ensemble. Le logiciel est plus maintenable et plus adaptable puisque les objets sont moins dépendants de la structure interne des autres objets, ceux-ci peuvent être changés sans changer le code de leurs appelants.
+\\\textbf{Couplage}: Le code se coordonne et fonctionne, si l'un change, tout doit être modifier pour garder ce couplage. Quand l'interdépendance entre les codes du projet est trop importante, la maintenance est difficile.
+\color[rgb]{0,0,0}
+
+
+
+\subsection{Question - 3 points}
+
+
+
+\subsubsection{Qu'est-ce que la loi de Demeter ?}
+\textcolor[rgb]{0,0.48,0.58}{Appliquée à la programmation orientée objet, un objet \textbf{A} peut appeler une méthode d'un objet \textbf{B}, mais \textbf{A} ne peut pas utiliser \textbf{B} pour accéder à un troisième objet \textbf{C} et appeler une méthode. Faire cela signifierait que \textbf{A} a une connaissance plus grande que nécessaire de la structure interne de \textbf{B}. Au lieu de cela, \textbf{B} pourrait être modifié si nécessaire pour que \textbf{A} puisse faire la requête directement à \textbf{B}, et \textbf{B} propagera la requête au composant ou sous-composant approprié. Si la loi est appliqué, seul \textbf{B} connaît sa propre structure interne. On ne peut pas passer "à travers" un objet.}
+
+
+\subsubsection{Donnez un exemple}
+\textcolor[rgb]{0,0.48,0.58}{Store.getItem(3568).getPrice() $\Rightarrow$ Store.getItemPrice(3568)}
+
+\subsubsection{Expliquez pourquoi il est bon de suivre cette loi}
+\textcolor[rgb]{0,0.48,0.58}{L'avantage de suivre la règle de Déméter est que le logiciel résultat est plus maintenable et plus adaptable (Cohésion forte). Puisque les objets sont moins dépendants de la structure interne des autres objets, ceux-ci peuvent être changés sans changer le code de leurs appelants (Couplage faible). Un désavantage de la règle de Déméter est qu'elle requiert l'écriture d'un grand nombre de petites méthodes pour propager les appels de méthodes à leurs composants. Cela peut augmenter le temps de développement initial, accroître l'espace mémoire utilisé, et notablement diminuer les performances.}

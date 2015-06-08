@@ -1,7 +1,7 @@
-# Résumé du cours INFOF204 - Analyse et methodes
+# Résumé du cours INFO-F204 - Analyse et methodes
 
 ## Qu'est-ce donc ce répertoire ?
-Ce répertoire contient le résumé en PDF (via LaTeX) du cours INFOF204 - Analyse et methodes de l'Université Libre de Bruxelles. Ce résumé dispose de la même table des matières que le cours (dans la mesure du possible).
+Ce répertoire contient le résumé en PDF (via LaTeX) du cours INFO-F204 - Analyse et methodes de l'Université Libre de Bruxelles. Ce résumé dispose de la même table des matières que le cours (dans la mesure du possible).
 
 ## Autres cours
 https://rodriguevb.github.io

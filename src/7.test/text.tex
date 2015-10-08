@@ -1,0 +1,51 @@
+7. Le test:
+7.1. Introduction:
+On va faire des test unitaire pour tester le programme. Ils testent une partie du programme de manière indépendante des autres.
+
+On prend une classe , on l’isole et on vérifie qu’elle fait bien ce qu’elle est censé faire.
+Il existe différentes approches de test:
+Test exploratoire: On joue avec l’application, on utilise l’interface, on a rien prévu pour le test.
+Utiliser des outils qui injecte des données à l’application.
+Test unitaire: On ne teste pas l’application mais les composants. On va créer un code supplémentaire pour tester.
+Stub ou Mock: Remplacer une classe par une autre, minimaliste et ne fournissant que l’interface ainsi éventuellement des outillages de test.
+7.2. Conditions:
+Invariant: Expression booléenne qui est toujours vraie. On commence donc par les vérifier. Si un des invariant est faux, c’est qu’il y a une erreur.
+Pré-condition et Post-conditions: Expression assurées être vraies avant ou après la méthode.
+7.3. Assertions:
+Assertion: Permet d’exprimer une expression booléenne qui doit être vraie à cet endroit.
+Cela permet de formaliser et d’écrire des pré-conditions, invariants et post-conditions.
+
+Avec une assertion, si l’invariant est violé on sait où et l’erreur ne se propage pas.
+7.4. Test unitaire:
+On écrit en général les test unitaires sous la forme d’objet. On les appelles des testssuites.
+Un avantage des tests unitaires est qu’on peut les relancer très facilement. On peut rejouer les test même sur ce qu’on a pas modifié. On vérifie qu’on a pas cassé quelque chose qui marchait déjà. C’est un test de non-régression.
+7.4.1. Rédaction de tests:
+Les développeurs doivent écrire du code et des tests en même temps mais parfois on écrit d’abord les tests puis le code.
+Extreme programming: Technique de programmation agile, très fortement itérative qui se base la dessus.
+Écrire d’abord les test permet de tester la spécification et non l’implémentation.
+Avant on écrivait beaucoup de documentation, qui finissait par ne plus être à jour. La meilleure source d’information sur une application est le code. Il faut investir du temps au niveau du code, de son auto-documentation, ses tests, sa lisibilité, …
+Les tests servent maintenant de documentation car ils sont toujours à jour.
+7.4.2. Méthodologie de rédaction de tests:
+Si on a un bug trouvé par le client, c’est qu’il est passé à travers les tests, donc aucun ne le couvre.
+On rédige alors un test qui échoue sur le bug et seulement ensuite on va pouvoir le corriger.
+Si en cherchant le bug on place des printf, c’est que ça devrait se retrouver dans le test.
+7.5. Mise en place de tests unitaires:
+On va tester une classe ou un petit morceau de programme.
+Il existe des frameworks de test unitaires dans presque tout les langages. ( CppUnit pour C++)
+En CppUnit, un testcase hérite de CppUnit::TestCase. La classe du test devrai avoir le nom “NomTest”.
+Un échec est une assertion qui rate, mais on l’avait anticipé. Une Erreur est un bug non-détecté par une assertion.
+7.5.1. Qualité des tests unitaires:
+Un bon test unitaire doit avoir certaines propriétés.
+Un test unitaire doit être déterministe: A chaque lancement du test, on doit avoir le même résultat. Sinon on peut perdre confiance dans les tests.
+Le lancement doit être automatisé.
+Les test sont une source de documentation. Ils doivent donc être lisible.
+Ils doivent être le moins sensible possible aux changements du code.
+Ils ne doivent pas tester des choses évidentes mais traiter les choses complexes et difficiles en premier.
+7.5.2. Frameworks de test:
+Les éléments clé d’un framework de tests sont le TestCase ( Cas de test ), les mécanisme pour les exécuter, les fixtures (un contexte, les objets cobaye dont on a besoin, les TestSuites ( un ensemble de TestCase) et le TestRunnerqui va déclencher les tests.
+
+On commence par déclarer un TestRunner. Un Outputter prend le flux de sortie et le met ailleurs.
+On enregistre les test auprès du TestRunner. Puis on le lance et l’Outputter contient maintenant les résultats.
+
+TestFixture: Une fixture est le contexte partagé par tout les testcase d’une suite de test.
+Entre chaque test, le contexte est réinitialisé à la fixture de départ.

@@ -33,9 +33,7 @@ On va faire des test unitaire pour tester le programme. Ils testent une partie d
 
 \subsubsection{Rédaction de tests}
 	Les développeurs doivent écrire du code et des tests en même temps mais parfois on écrit d’abord les tests puis le code.
-	\begin{description}
-		\item[Extreme programming] Technique de programmation agile, très fortement itérative qui se base la dessus.
-	\end{description}
+	\\\textbf{Extreme programming}: Technique de programmation agile, très fortement itérative qui se base la dessus.
 	\\Écrire d’abord les test permet de tester la spécification et non l’implémentation.
 	\\Avant on écrivait beaucoup de documentation, qui finissait par ne plus être à jour. La meilleure source d’information sur une application est le code. Il faut investir du temps au niveau du code, de son auto-documentation, ses tests, sa lisibilité, ...
 	\\Les tests servent maintenant de documentation car ils sont toujours à jour.
@@ -43,8 +41,8 @@ On va faire des test unitaire pour tester le programme. Ils testent une partie d
 
 \subsubsection{Méthodologie de rédaction de tests}
 	Si on a un bug trouvé par le client, c’est qu’il est passé à travers les tests, donc aucun ne le couvre.
-	On rédige alors un test qui échoue sur le bug et seulement ensuite on va pouvoir le corriger.
-	Si en cherchant le bug on place des printf, c’est que ça devrait se retrouver dans le test.
+	\\On rédige alors un test qui échoue sur le bug et seulement ensuite on va pouvoir le corriger.
+	\\Si en cherchant le bug on place des printf, c’est que ça devrait se retrouver dans le test.
 
 
 \subsection{Mise en place de tests unitaires}
@@ -68,7 +66,5 @@ On va faire des test unitaire pour tester le programme. Ils testent une partie d
 
 	On commence par déclarer un TestRunner. Un Outputter prend le flux de sortie et le met ailleurs. On enregistre les test auprès du TestRunner. Puis on le lance et l’Outputter contient maintenant les résultats.
 
-	\begin{description}
-		\item [TestFixture] Une fixture est le contexte partagé par tout les testcase d’une suite de test.
-	\end{description}
+	\\\textbf{TestFixture}: Une fixture est le contexte partagé par tout les testcase d’une suite de test.
 	\\Entre chaque test, le contexte est réinitialisé à la fixture de départ.

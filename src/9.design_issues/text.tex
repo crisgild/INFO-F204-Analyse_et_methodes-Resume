@@ -16,23 +16,25 @@ On va voir quelques standards à appliquer quand on code.
 \subsubsection{Noms}
 C’est le seul endroit ou on peut donner une signification humaine au code. Prendre le temps de bien choisir un nom fait gagner énormément de temps.
 Le nom d’une méthode doit expliquer ce qu’elle fait. Un objet peut changer son état , changer l’état d’un de ses arguments, ou alors ne rien faire et retourner un résultat. Chacun de ces types de méthode utilise des noms prédéfinis. 
-\\Quand on change l’objet, on utilise un verbe(insert, clear, …).
-Quand on modifie un paramètre on peut utiliser des noms constitués d’un verbe et d’une préposition or ou to. (displayOn, printTo,...) 
-Quand on ne fait que retourner une valeur, on utilise un nom(left,size,color,...)
 
 \begin{itemize}
-	\item [\textbf{Les méthodes d’accès}] ont généralement des noms venant par paire : getWinner et setWinner.
-	\item[\textbf{Les méthodes de test}] vérifient quelque chose sur l’objet. On a des nom en is.. et has.. (isEmpty, …)
-	\item[\textbf{Les méthodes de conversion}] sont généralement en as..(asString, …)
-	\item[\textbf{Pour les classes}], les noms commencent par une majuscule et sont proches de ce que l’homme comprend ( ex: Voitre, Roue, … )
+
+	\item[Quand on \textbf{change l’objet}], on utilise un verbe(insert, clear, …).
+	\item[Quand on \textbf{modifie un paramètre}] on peut utiliser des noms constitués d’un verbe et d’une préposition or ou to. (displayOn, printTo,...) 
+	\item[Quand on ne fait que \textbf{retourner une valeur}], on utilise un nom(left,size,color,...)
+	\item [Les \textbf{méthodes d’accès}] ont généralement des noms venant par paire : getWinner et setWinner.
+	\item[Les \textbf{méthodes de test}] vérifient quelque chose sur l’objet. On a des nom en is.. et has.. (isEmpty, …)
+	\item[Les \textbf{méthodes de conversion}] sont généralement en as..(asString, …)
+	\item[Pour \textbf{les classes}], les noms commencent par une majuscule et sont proches de ce que l’homme comprend ( ex: Voitre, Roue, … )
 	\item[Quand une classe est \textbf{abstraite}] on place Abstarct quelque-part dans le nom.
 	\item[Lorsqu’on utilise un \textbf{design pattern}], on utilise son nom dans le nom de la classe.
 \end{itemize}
 
-9.1.3. Formattage:
+\subsubsection{Formattage}
 Tout le monde doit utiliser une même configuration d’indentation.
 SI quelqu’un fait un commit après que son éditeur ait réindenter le fichier, tout le fichier sera réécrit au lieu des seules modifications apportées.
-9.2. Encapsulation:
+
+\subsection{Encapsulation}
 Le principe de Parnas: Le développeur d’un composant ne doit fournir à l’extérieur que le strict minimum nécessaire pour que l’objet soit utilisable. Ni plus , ni moins.
 
 Quand un bout de code en appelle un autre en connaissant tout son intimité, c’est un couplage fort. On est sans doute très dépendant de plein de petits comportements de l’objet appelé.
@@ -40,24 +42,24 @@ Si on appelle la méthode d’un objet de manière polymorphique, on ne connaît
 
 La loi de Demeter: Si un bout de code qui en utilise un autre sait que cet autre en utilise un troisième, alors le premier et le troisième sont liés. On évite ça en s’assurant que l’interface publique d’un objet n’expose rien d’interne.!
 La loi de demeter dit qu’on ne peut envoyer un message qu’à soit même, un objet qu’on crée, ses attributs, les arguments qu’on reçoit ou super. Cette règle est très tricte, on ne peut pas passer “à travers” un objet.
-9.3. Commentaires:
+\subsection{Commentaires}
 Avant on apprenait à mettre beaucoup de commentaire. Maintenant on dit que moins il y a de commentaire mieux c’est. MAIS il faut commenter.
 
 Le code auto-documenté est basé sur le fait que si on est tenté de mettre un commentaire dans son code pour expliquer ce qu’il fait c’est que le code est peut être trop compliqué.
 
 Un puriste préfère un code lisible sans commentaires qu’un code aussi lisible mais avec commentaires.
-9.4. Gestion des booléens et valeurs de retour:
+\subsection{Gestion des booléens et valeurs de retour}
 Parfois passer des paramètres un peu interne peut entrainer un couplage trop important. (setStatus(ON|OFF)). Il faut alors faire deux méthodes , makeOn et makeOff.
 
 Si parfois on est tenté d’avoir des méthodes qui retournent plusieurs choses, il faut alors découper la méthode pour en avoir deux ou plus.
 
 Une autre solution est de renvoyer un objet avec de beaux getters. Ex: Au lieu de renvoyer un font et un color, on crée un objet Style qui contient ça.
-9.5. Duplication de code:
+\subsection{Duplication de code}:
 Quand on modifie un bout de code, il faut ensuite aller regarder partout où il a été copié et corriger partout. Si on copie/colle quelque chose, c’est que quelque chose cloche.
-9.6. Magic numbers:
+\subsection{Magic numbers}:
 Parfois on a des nombres qui se promène dans le code ( ex: des 0.21 pour le TVA).
 Il faut remplacer ces nombres magiques par des constantes nominées ou des méthodes qui retournent des choses.
-9.7. Code gardé:
+\subsection{Code gardé}:
 Un code gardé n’est exécuté que dans certain cas. C’est une grosse fonction placée dans un gros if.
 
 Pour le résoudre on inverse la condition du if et on met un return.

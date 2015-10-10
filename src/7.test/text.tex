@@ -54,10 +54,9 @@ On va faire des test unitaire pour tester le programme. Ils testent une partie d
 
 \subsubsection{Qualité des tests unitaires}
 	Un bon test unitaire doit avoir certaines propriétés.
-	\\Un test unitaire doit être déterministe: A chaque lancement du test, on doit avoir le même résultat. Sinon on peut perdre confiance dans les tests.
-	\\Le lancement doit être automatisé.
-	\\Les test sont une source de documentation. Ils doivent donc être lisible.
-	\\Ils doivent être le moins sensible possible aux changements du code.
+	\\Un test unitaire doit être déterministe: A chaque lancement du test, on doit avoir le même résultat. Sinon on peut perdre confiance dans les tests. Le lancement doit être automatisé.
+	\\Les test sont une source de documentation. 
+	Ils doivent donc être lisible. Ils doivent être le moins sensible possible aux changements du code.
 	\\Ils ne doivent pas tester des choses évidentes mais traiter les choses complexes et difficiles en premier.
 
 
@@ -66,5 +65,5 @@ On va faire des test unitaire pour tester le programme. Ils testent une partie d
 
 	On commence par déclarer un TestRunner. Un Outputter prend le flux de sortie et le met ailleurs. On enregistre les test auprès du TestRunner. Puis on le lance et l’Outputter contient maintenant les résultats.
 
-	\\\textbf{TestFixture}: Une fixture est le contexte partagé par tout les testcase d’une suite de test.
+	\textbf{TestFixture}: Une fixture est le contexte partagé par tout les testcase d’une suite de test.
 	\\Entre chaque test, le contexte est réinitialisé à la fixture de départ.

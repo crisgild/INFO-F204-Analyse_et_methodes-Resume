@@ -1,31 +1,34 @@
-9. Implementation and Design Issues:
-9.1. Aspect du code:
+\section{Implementation and Design Issues}
+
+\subsection{Aspect du code}
 On va voir quelques standards à appliquer quand on code.
-Le premier principe de lisibilité est la cohérence. Il faut éviter qu’on sache reconnaître quel développeur a écrit quel code.
 
-Couplage: Interdépendante entre le code du projet. Quand un élément change, il faut modifier tout ce qui y est couplé. Quand le couplage au sein de l’application est trop important, la maintenance est difficile.
+\subsubsection{Mise à niveau}
+\begin{description}
+	\item[Cohérence]: Le premier principe de lisibilité est la cohérence. Il faut éviter qu’on sache reconnaître quel développeur a écrit quel code.
+	\item[Couplage]: Interdépendante entre le code du projet. Quand un élément change, il faut modifier tout ce qui y est couplé. Quand le couplage au sein de l’application est trop important, la maintenance est difficile.
 
-Cohésion: est le couplage interne. Ce qu’on a mis dans un objet a une bonne raison d’y être.
-Quand on a un faible couplage, on a une très forte cohésion. => Ca c’est bien.
+	\item[Cohésion]: est le couplage interne. Ce qu’on a mis dans un objet a une bonne raison d’y être. Quand on a un faible couplage, on a une très forte cohésion. => Ca c’est bien.
 
-Standard de codage: Ensemble de règles qui définissent comment on écrit du code.
-Il faut toujours suivre le standard de codage du projet sur lequel on travaille.
-9.1.2. Noms:
-C’est le seul endroit ou on peut donner une signification humaine au code.
-Prendre le temps de bien choisir un nom fait gagner énormément de temps.
+	\item[Standard de codage]: Ensemble de règles qui définissent comment on écrit du code. Il faut toujours suivre le standard de codage du projet sur lequel on travaille.
+\end{description}
 
-Le nom d’une méthode doit expliquer ce qu’elle fait. Un objet peut changer son état , changer l’état d’un de ses arguments, ou alors ne rien faire et retourner un résultat. Chacun de ces types de méthode utilise des noms prédéfinis.
-Quand on change l’objet, on utilise un verbe(insert, clear, …).
+\subsubsection{Noms}
+C’est le seul endroit ou on peut donner une signification humaine au code. Prendre le temps de bien choisir un nom fait gagner énormément de temps.
+Le nom d’une méthode doit expliquer ce qu’elle fait. Un objet peut changer son état , changer l’état d’un de ses arguments, ou alors ne rien faire et retourner un résultat. Chacun de ces types de méthode utilise des noms prédéfinis. 
+\\Quand on change l’objet, on utilise un verbe(insert, clear, …).
 Quand on modifie un paramètre on peut utiliser des noms constitués d’un verbe et d’une préposition or ou to. (displayOn, printTo,...) 
 Quand on ne fait que retourner une valeur, on utilise un nom(left,size,color,...)
 
-Les méthodes d’accès ont généralement des noms venant par paire : getWinner et setWinner.
-Les méthodes de test vérifient quelque chose sur l’objet. On a des nom en is.. et has.. (isEmpty, …)
-Les méthode de conversion sont généralement en as..(asString, …)
+\begin{itemize}
+	\item [\textbf{Les méthodes d’accès}] ont généralement des noms venant par paire : getWinner et setWinner.
+	\item[\textbf{Les méthodes de test}] vérifient quelque chose sur l’objet. On a des nom en is.. et has.. (isEmpty, …)
+	\item[\textbf{Les méthodes de conversion}] sont généralement en as..(asString, …)
+	\item[\textbf{Pour les classes}], les noms commencent par une majuscule et sont proches de ce que l’homme comprend ( ex: Voitre, Roue, … )
+	\item[Quand une classe est \textbf{abstraite}] on place Abstarct quelque-part dans le nom.
+	\item[Lorsqu’on utilise un \textbf{design pattern}], on utilise son nom dans le nom de la classe.
+\end{itemize}
 
-Pour les classes, les noms commence par une majuscule et sont proches de ce que l’homme comprend ( ex: Voitre, Roue, … )
-Quand une classe est abstraite on place Abstarct quelque-part dans le nom.
-Lorsqu’on utilise un design pattern, on utilise son nom dans le nom de la classe.
 9.1.3. Formattage:
 Tout le monde doit utiliser une même configuration d’indentation.
 SI quelqu’un fait un commit après que son éditeur ait réindenter le fichier, tout le fichier sera réécrit au lieu des seules modifications apportées.

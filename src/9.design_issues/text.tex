@@ -54,12 +54,12 @@ Parfois passer des paramètres un peu interne peut entrainer un couplage trop im
 Si parfois on est tenté d’avoir des méthodes qui retournent plusieurs choses, il faut alors découper la méthode pour en avoir deux ou plus.
 
 Une autre solution est de renvoyer un objet avec de beaux getters. Ex: Au lieu de renvoyer un font et un color, on crée un objet Style qui contient ça.
-\subsection{Duplication de code}:
+\subsection{Duplication de code}
 Quand on modifie un bout de code, il faut ensuite aller regarder partout où il a été copié et corriger partout. Si on copie/colle quelque chose, c’est que quelque chose cloche.
-\subsection{Magic numbers}:
+\subsection{Magic numbers}
 Parfois on a des nombres qui se promène dans le code ( ex: des 0.21 pour le TVA).
 Il faut remplacer ces nombres magiques par des constantes nominées ou des méthodes qui retournent des choses.
-\subsection{Code gardé}:
+\subsection{Code gardé}
 Un code gardé n’est exécuté que dans certain cas. C’est une grosse fonction placée dans un gros if.
 
 Pour le résoudre on inverse la condition du if et on met un return.

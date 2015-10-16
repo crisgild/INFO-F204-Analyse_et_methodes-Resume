@@ -1,0 +1,27 @@
+\section{Étude de cas de développement}
+
+\subsection{Analyse}
+\textbf{Requirements du client}: Une description du jeu.
+
+La première chose à faire est d’identifier les acteurs et de faire des use case. Dans ce cas on a deux joueurs qui interagissent avec le programme. On a donc un seul acteur joueur, celui qui joue son tour.
+Ensuite on fait un diagramme de classes. On fait parler tout le monde sans critique, on amène de l’information sans la classer ni rien.
+
+\subsection{Approche itérative}
+L’approche itérative propose des sous-versions du logiciel après chaque étape montrable au client. Cela permet d’avoir des retours plus vite. Mais cela peut mener à développer des choses qu’on va bazarder plus tard mais c’est normal.
+
+\textbf{Refactoring}: Changer le code pour que l’application fasse non pas des choses en plus mais différement.
+A chaque itération, on modifie ce qu’on a déjà fait et on arrive à la fin avec un système qui marche.
+
+\subsection{Direction et début}
+Avant de commencer la première itération, on fixe le scope. ( Le jeu sera t’il en résaux ? Avec parties sauvegardées ? … ).
+
+On va proposer les objets. Classe Game qui gère les règles. La classe Player représente un joueur et s’occupe de l’input. Compartment est une case de la grille, gérée par Game. Figure est ce qu’on met dans les Compartments. On ajoute un objet Driver qui va gérer le jeu et l’affichage.
+
+Sequence Diagram montre une petite partie: Game crée des Player, Driver passe son temps à demander à game si il a fini. Game demande à un joueur chacun son tour quel mouvement il peut faire.
+\subsection{Extention}
+Notre prochaine itération vise à avoir un Board, de pouvoir l’imprimer et de pouvoir ajouter des joueurs.
+
+\textbf{Plateau de jeu}: matrice 3x3, statique, de caractère. Chaque carac est soit un O, soit un X, soit un espace. Le board init à plein d’espace au début. On le référence avec des set et get.
+Dans ces méthodes on a une assertion inRange, qui vérifie que la colonne est entre A et C et la ligne entre 1 et 3.
+
+Pour le test, on fait plein de get et set et de vérifier qu’on récupère bien ce qu’on met dans la matrice. On teste également qu’au début, la matrice est vide. La dernière vérification teste que inRange(“D”,”3”) renvoie bien faux.

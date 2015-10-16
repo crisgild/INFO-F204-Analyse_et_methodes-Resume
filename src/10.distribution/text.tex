@@ -1,0 +1,41 @@
+\section{Distribution et synchronisation en UML}
+
+\subsection{Diagramme d’état}
+Un diagramme d’état représente des états, reliés par des transitions.
+Sur chaque transition, il y a un label “Déclencheur / Action”
+(ex: “Activation du backup / Activation de l’utilitaire graphique”).
+
+Un état peut avoir une activité. Quand le système rentre dans cet état, il exécute l’activité et n’en sort que quand elle est finie. ( do/activité dans la description de l’état).
+
+\subsection{Diagrammes de composants et de déploiement}
+Représente la structure physique de l’application.
+
+Le composants sont nommés et on un type ( source, objets, exécutable, …).
+Le diagramme de déploiement est le mapping entre les composants et les noeuds d’exécution de l’application.
+Un noeud de stockage ou d’exécution est représenté par un gros cube, contenant des composants.
+
+\subsection{Diagramme d’activité}
+Comme un diagramme d’état mais plus adapté à des choses avec des conditions et plus d’activités.
+
+On a un état de début , un état de fin, des activités, puis des branch (if, avec une condition sur chaque sortie. Une seule est prise.), des join ( des entrées, et on revient sur le même chemin).
+
+Un \textbf{fork} lance toutes les actions filles en parallèle. Le join permet de synchro des choses.
+
+Une \textbf{sous-activité} permet d’avoir un diagramme simple avec des activité haut niveau. Si on l’ouvre, on tombe sur un autre diagramme.
+
+Une \textbf{swimlane} permette de séparer deux choses indépendant. ( comme ce qui se passe sur un client et un serveur.)
+
+\subsection{Processus et threads}
+Un objet actif représente un thread ou un processus. 
+Pour représenter un objet actif en UML, on lui fait un gros bord.
+Un stéréotype ( = Permet de classifier des éléments UML.) peut être apposé sur quelque-chose qui représente un thread ou un processus.
+\\Deux objets actifs peuvent communiquer de manière synchrone (bloquant) ou asynchrone.
+
+Si plusieurs actifs appelle un passif, on peut avoir des problèmes. Pour régler ça, on utilise des stéréotypes:
+\begin{description}
+	\item [sequential]: Les appelants doivent sérialiser leurs appels.
+	\item [guarded]: Même chose. Sauf que c’est l’objet qui s’assure de ne traiter les choses qu’en série.
+	\item [concurrent]: Il peut accepter tout en même temps et il sait s’arranger pour que ca marche correctement.
+\end{description}
+
+Un contrainte avec un égal ( {location=airport} ) est une tagged value.
